@@ -29,4 +29,13 @@ const update = () => {
       circle.classList.remove('active');
     }
   });
+
+  const actives = document.querySelectorAll('.active');
+  let percentage;
+
+  actives.length === 1
+    ? (percentage = 0)
+    : (percentage = (actives.length - 1) / (circles.length - 1));
+
+  progress.style.width = `${Math.round(percentage * 100)}%`;
 };
